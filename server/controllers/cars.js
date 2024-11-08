@@ -65,11 +65,11 @@ exports.updateCar = async (req, res, next) => {
       color: req.body.color,
       price: req.body.price,
     };
-    const result = Car.findByIdAndUpdate(req.params.id, data);
+    const result = await Car.findByIdAndUpdate(req.params.id, data);
     if (result) {
       return res.status(200).send({
         message: "Car updated!",
-        payload: Car.findById(req.params.id)
+        payload: result
       });
     }
     res.status(500).send({
@@ -82,14 +82,14 @@ exports.updateCar = async (req, res, next) => {
  
 exports.deleteCar = async (req, res, next) => {
   try {
-    const result = Car.findByIdAndDeleted(req.params.id);
+    const result = await Car.findByIdAndDelete(req.params.id);
     if (result) {
       return res.status(200).send({
         message: "Car deleted!",
         payload: result
       });
     }
-    res.status(500).send({
+    res.status(404).send({
       message: "Car not deleted!"
     })
   } catch (err) {

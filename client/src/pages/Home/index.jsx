@@ -8,7 +8,7 @@ export default function Home(){
               <p>Add Car</p>
             </Link>
             <Link to={"/view-cars"}>
-                <p>Add Car</p>
+                <p>Vier caer</p>
             </Link>
             <Link to={"/"}></Link>
         </>

@@ -49,7 +49,8 @@ export const createCar = async (formData) =>{
 
 };
 export const updateCar = async (id, formData) =>{
-
+    console.log(id)
+    console.log(formData)
     const req = await fetch(`http://localhost:3000/cars/${id}`,{
         headers:{
             Accept: "application/json",
@@ -66,15 +67,14 @@ export const updateCar = async (id, formData) =>{
     }
 
 };
-export const deleteCar = async () =>{
+export const deleteCar = async (id) =>{
 
     const req = await fetch(`http://localhost:3000/cars/${id}`,{
         headers:{
             Accept: "application/json",
             "Content-Type": "application/json"
         },
-        method: "DELETE",
-        body: JSON.stringify(formData)
+        method: "DELETE" 
     });
     const data = await req.json();
     return {

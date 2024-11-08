@@ -6,7 +6,7 @@ export default function CreatedCar() {
     return (
         <>
             <div>CreatedCar : {id}</div>
-            <Link to={`./{id}`}>
+            <Link to={`./${id}`}>
                 <p>View car</p>
             </Link>
         </>
