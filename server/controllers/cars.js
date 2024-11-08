@@ -42,7 +42,7 @@ exports.createCar = async (req, res, next) => {
       color: req.body.color,
       price: req.body.price,
     });
-    const result = await data.save(Car);
+    const result = await data.save();
     if (result) {
       return res.status(201).send({
         message: "Car created!",

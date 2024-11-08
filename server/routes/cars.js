@@ -7,7 +7,7 @@ router.get('/', carsRouter.getAllCars);
  
 router.get('/:id', carsRouter.getCarById);
  
-router.post('/', carsRouter.updateCar);
+router.post('/', carsRouter.createCar);
  
 router.put('/:id', carsRouter.updateCar);
  
